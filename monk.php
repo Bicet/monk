@@ -5,8 +5,8 @@
     <base href="https://gchumanrights.org/">
     <meta charset="utf-8">
     <meta name="robots" content="index,follow">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="This simple tool lets you easily paste a shareable link from gdrive, YouTube or Facebook and obtain the code to be used on open edX, or on GC website.">
+    <meta name="keywords" content="HTML, Code Genrator">
     <meta name="generator" content="Nicola Tonon">
     <meta property="og:image" content="https://gchumanrights.org/files/eiuc/social/globalcampus-home.png">
     <meta property="og:image:width" content="1200">
@@ -23,12 +23,12 @@
     <!--[if lt IE 9]><script src="assets/html5shiv/3.7.2/html5shiv-printshiv.min.js"></script><![endif]-->
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script>
-	function copy() {
-	    let textarea = document.getElementById("textarea");
-	    textarea.select();
-	    document.execCommand("copy");
-	    }
-	</script>
+    function copy() {
+        let textarea = document.getElementById("textarea");
+        textarea.select();
+        document.execCommand("copy");
+        }
+    </script>
 </head>
 
 <body>
@@ -38,7 +38,7 @@
         <div class="ce_text description_page_programme block" style="padding-left: 50px;">
             <h1>HTML Code Generator for Gdrive, YouTube, Facebook</h1>
 
-            <p class="margin_bottom_20">This quick tool lets you easily paste a shareable link from gdrive, YouTube or Facebook and obtain the code to be used on open edX, or on the website.</p>
+            <p class="margin_bottom_20">This simple tool lets you easily paste a shareable link from gdrive, YouTube or Facebook and obtain the code to be used on open edX, or on GC website.</p>
 
             <form action="monk/monk.php" method="post">
                 <div class="formbody">
@@ -173,6 +173,7 @@
                         break;
 
                     case "yt-video":
+                        $url_id = "SUKA";
                         echo "<h1>Your Code is copy/paste away</h1><div class=\"widget widget-textarea form_left \"><textarea rows=\"6\" cols=\"40\"id=\"textarea\">";
                         $output_html = "<img src=\"https://drive.google.com/uc?export=view&id=" .$url_id .  "\" alt=\"image_description\" />";
                         echo htmlspecialchars($output_html);
@@ -195,7 +196,7 @@
                         break;
                     
                 }
-			?>
+            ?>
         </div>
     </section>
 </body>
