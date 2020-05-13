@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Gdrive Link Generator - Global Campus of Human Rights</title>
+    <title>HTML Generator - Global Campus of Human Rights</title>
     <base href="https://gchumanrights.org/">
     <meta charset="utf-8">
     <meta name="robots" content="index,follow">
@@ -38,7 +38,7 @@
         <div class="ce_text description_page_programme block" style="padding-left: 50px;">
             <h1>HTML Code Generator for Gdrive, YouTube, Facebook</h1>
 
-            <p class="margin_bottom_20">This quick tool lets you easily paste a shareable link from gdrive and obtain the code to be used on open edX</p>
+            <p class="margin_bottom_20">This quick tool lets you easily paste a shareable link from gdrive, YouTube or Facebook and obtain the code to be used on open edX, or on the website.</p>
 
             <form action="monk/monk.php" method="post">
                 <div class="formbody">
