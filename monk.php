@@ -153,7 +153,6 @@
                     case "browsable":
                         echo "<h1>Your Code is copy/paste away</h1><div class=\"widget widget-textarea form_left \"><textarea rows=\"6\" cols=\"40\"id=\"textarea\">";
                         $output_html ="<div class=\"box_horizontal_a4_container\"><iframe class=\"box_horizontal_a4\" src=\"https://eiuc.org/edxtools/z_gdrive_viewer.php?ID=" .$url_id .  "\"></iframe></div>";
-                        //$output_html =  "<iframe src=\"https://drive.google.com/embeddedfolderview?id=" .$url_id . "#list\" style=\"width:100%; height:600px; border:0;\"></iframe>";
                         echo htmlspecialchars($output_html);
                         echo "</textarea>";
                         echo "<div class=\"submit_container submit button button--aylen button_submit button--aylen_submit no_margin_bottom\"> <input type=\"submit\" class=\"submit submit button button--aylen button_submit button--aylen_submit no_margin_bottom\" onclick=\"copy()\" value=\"COPY\"></button></div>";
@@ -165,7 +164,28 @@
                     case "image":
                         echo "<h1>Your Code is copy/paste away</h1><div class=\"widget widget-textarea form_left \"><textarea rows=\"6\" cols=\"40\"id=\"textarea\">";
                         $output_html = "<img src=\"https://drive.google.com/uc?export=view&id=" .$url_id .  "\" alt=\"image_description\" />";
-                        //$output_html =  "<iframe src=\"https://drive.google.com/embeddedfolderview?id=" .$url_id . "#list\" style=\"width:100%; height:600px; border:0;\"></iframe>";
+                        echo htmlspecialchars($output_html);
+                        echo "</textarea>";
+                        echo "<div class=\"submit_container submit button button--aylen button_submit button--aylen_submit no_margin_bottom\"> <input type=\"submit\" class=\"submit submit button button--aylen button_submit button--aylen_submit no_margin_bottom\" onclick=\"copy()\" value=\"COPY\"></button></div>";
+                        echo "<p class=\"margin_bottom_20\">&nbsp;</p>
+                             <br><br><h1> Preview</h1>";
+                        echo $output_html;
+                        break;
+
+                    case "yt-video":
+                        echo "<h1>Your Code is copy/paste away</h1><div class=\"widget widget-textarea form_left \"><textarea rows=\"6\" cols=\"40\"id=\"textarea\">";
+                        $output_html = "<img src=\"https://drive.google.com/uc?export=view&id=" .$url_id .  "\" alt=\"image_description\" />";
+                        echo htmlspecialchars($output_html);
+                        echo "</textarea>";
+                        echo "<div class=\"submit_container submit button button--aylen button_submit button--aylen_submit no_margin_bottom\"> <input type=\"submit\" class=\"submit submit button button--aylen button_submit button--aylen_submit no_margin_bottom\" onclick=\"copy()\" value=\"COPY\"></button></div>";
+                        echo "<p class=\"margin_bottom_20\">&nbsp;</p>
+                             <br><br><h1> Preview</h1>";
+                        echo $output_html;
+                        break;
+
+                    case "fb-video":
+                        echo "<h1>Your Code is copy/paste away</h1><div class=\"widget widget-textarea form_left \"><textarea rows=\"6\" cols=\"40\"id=\"textarea\">";
+                        $output_html = "<img src=\"https://drive.google.com/uc?export=view&id=" .$url_id .  "\" alt=\"image_description\" />";
                         echo htmlspecialchars($output_html);
                         echo "</textarea>";
                         echo "<div class=\"submit_container submit button button--aylen button_submit button--aylen_submit no_margin_bottom\"> <input type=\"submit\" class=\"submit submit button button--aylen button_submit button--aylen_submit no_margin_bottom\" onclick=\"copy()\" value=\"COPY\"></button></div>";
