@@ -43,13 +43,13 @@
             <form action="monk/monk.php" method="post">
                 <div class="formbody">
                     <div class="widget widget-text form_left mandatory">
-                        <label for="ctrl_6205" class="form_left mandatory">Paste here your gdrive, youtube or facebook link:</label> <input type="text" name="url_input" id="val1" class="text form_left" placeholder="Paste here the gdrive link">
+                        <label for="ctrl_6205" class="form_left mandatory">Paste here your gdrive, youtube or facebook link:</label> <input type="text" name="url_input" id="val1" class="text form_left" placeholder="Paste your link">
                     </div>
 
                     <div class="clear"></div>
 
                     <div class="widget widget-text form_left mandatory">
-                        <label for="ctrl_6205" class="form_left mandatory">Choose what kind of link it is:</label> <select name="link_type" id="link_type">
+                        <label for="ctrl_6205" class="form_left mandatory">Choose the type of content based on the platform and kind of file:</label> <select name="link_type" id="link_type">
                             <option value="portrait2">
                                 Gdrive - Single File - Portrait
                             </option>
@@ -103,7 +103,7 @@
                     
                 switch ($final_code){
                     case "portrait2":
-                        echo "<h1>Your Code is copy/paste away</h1><div class=\"widget widget-textarea form_left \"><textarea rows=\"6\" cols=\"40\"id=\"textarea\">";
+                        echo "<p class=\"margin_bottom_40\"></p><h1>Your Code is just a copy/paste away</h1><div class=\"widget widget-textarea form_left \"><textarea rows=\"6\" cols=\"40\"id=\"textarea\">";
                         $output_html =  "<div class=\"box_vertical_a4_container\"><iframe class=\"box_vertical_a4\" src=\"https://drive.google.com/file/d/" .$url_id . "/preview\"></iframe></div>";
                         echo htmlspecialchars($output_html);
                         echo "</textarea>";
@@ -116,7 +116,7 @@
 
                     
                     case "landscape":
-                        echo "<h1>Your Code is copy/paste away</h1><div class=\"widget widget-textarea form_left \"><textarea rows=\"6\" cols=\"40\"id=\"textarea\">";
+                        echo "<p class=\"margin_bottom_40\"></p><h1>Your Code is just a copy/paste away</h1><div class=\"widget widget-textarea form_left \"><textarea rows=\"6\" cols=\"40\"id=\"textarea\">";
                         $output_html =  "<div class=\"box_horizontal_a4_container\"><iframe class=\"box_horizontal_a4\" src=\"https://drive.google.com/file/d/" .$url_id . "/preview\"></iframe></div>";
                         echo htmlspecialchars($output_html);
                         echo "</textarea>";
@@ -128,7 +128,7 @@
                         break;
                         
                     case "gridview":
-                        echo "<h1>Your Code is copy/paste away</h1><div class=\"widget widget-textarea form_left \"><textarea rows=\"6\" cols=\"40\"id=\"textarea\">";
+                        echo "<p class=\"margin_bottom_40\"></p><h1>Your Code is just a copy/paste away</h1><div class=\"widget widget-textarea form_left \"><textarea rows=\"6\" cols=\"40\"id=\"textarea\">";
                         $output_html =  "<iframe src=\"https://drive.google.com/embeddedfolderview?id=" .$url_id . "#grid\" style=\"width:100%; height:600px; border:0;\"></iframe>";
                         echo htmlspecialchars($output_html);
                         echo "</textarea>";
@@ -140,7 +140,7 @@
                         break;
                         
                     case "detailview":
-                        echo "<h1>Your Code is copy/paste away</h1><div class=\"widget widget-textarea form_left \"><textarea rows=\"6\" cols=\"40\"id=\"textarea\">";
+                        echo "<p class=\"margin_bottom_40\"></p><h1>Your Code is just a copy/paste away</h1><div class=\"widget widget-textarea form_left \"><textarea rows=\"6\" cols=\"40\"id=\"textarea\">";
                         $output_html =  "<iframe src=\"https://drive.google.com/embeddedfolderview?id=" .$url_id . "#list\" style=\"width:100%; height:600px; border:0;\"></iframe>";
                         echo htmlspecialchars($output_html);
                         echo "</textarea>";
@@ -151,7 +151,7 @@
                         break;
 
                     case "browsable":
-                        echo "<h1>Your Code is copy/paste away</h1><div class=\"widget widget-textarea form_left \"><textarea rows=\"6\" cols=\"40\"id=\"textarea\">";
+                        echo "<p class=\"margin_bottom_40\"></p><h1>Your Code is just a copy/paste away</h1><div class=\"widget widget-textarea form_left \"><textarea rows=\"6\" cols=\"40\"id=\"textarea\">";
                         $output_html ="<div class=\"box_horizontal_a4_container\"><iframe class=\"box_horizontal_a4\" src=\"https://eiuc.org/edxtools/z_gdrive_viewer.php?ID=" .$url_id .  "\"></iframe></div>";
                         echo htmlspecialchars($output_html);
                         echo "</textarea>";
@@ -162,7 +162,7 @@
                         break;
                         
                     case "image":
-                        echo "<h1>Your Code is copy/paste away</h1><div class=\"widget widget-textarea form_left \"><textarea rows=\"6\" cols=\"40\"id=\"textarea\">";
+                        echo "<p class=\"margin_bottom_40\"></p><h1>Your Code is just a copy/paste away</h1><div class=\"widget widget-textarea form_left \"><textarea rows=\"6\" cols=\"40\"id=\"textarea\">";
                         $output_html = "<img src=\"https://drive.google.com/uc?export=view&id=" .$url_id .  "\" alt=\"image_description\" />";
                         echo htmlspecialchars($output_html);
                         echo "</textarea>";
@@ -173,9 +173,15 @@
                         break;
 
                     case "yt-video":
-                        $url_id = "SUKA";
-                        echo "<h1>Your Code is copy/paste away</h1><div class=\"widget widget-textarea form_left \"><textarea rows=\"6\" cols=\"40\"id=\"textarea\">";
-                        $output_html = "<img src=\"https://drive.google.com/uc?export=view&id=" .$url_id .  "\" alt=\"image_description\" />";
+                        
+                        function get_youtube_id_from_url($url)  {
+                            preg_match('/(http(s|):|)\/\/(www\.|)yout(.*?)\/(embed\/|watch.*?v=|)([a-z_A-Z0-9\-]{11})/i', $url, $results);
+                            return $results[6];
+                        }
+
+                        $url_id = get_youtube_id_from_url ($input_url);
+                        echo "<p class=\"margin_bottom_40\"></p><h1>Your Code is just a copy/paste away</h1><div class=\"widget widget-textarea form_left \"><textarea rows=\"6\" cols=\"40\"id=\"textarea\">";
+                        $output_html = "<div class=\"video169_container\"><iframe class=\"video169\" src=\"https://www.youtube.com/embed/" .$url_id .  "\" frameborder=\"0\" allowfullscreen=\"\"></iframe></div>";
                         echo htmlspecialchars($output_html);
                         echo "</textarea>";
                         echo "<div class=\"submit_container submit button button--aylen button_submit button--aylen_submit no_margin_bottom\"> <input type=\"submit\" class=\"submit submit button button--aylen button_submit button--aylen_submit no_margin_bottom\" onclick=\"copy()\" value=\"COPY\"></button></div>";
@@ -185,8 +191,9 @@
                         break;
 
                     case "fb-video":
-                        echo "<h1>Your Code is copy/paste away</h1><div class=\"widget widget-textarea form_left \"><textarea rows=\"6\" cols=\"40\"id=\"textarea\">";
-                        $output_html = "<img src=\"https://drive.google.com/uc?export=view&id=" .$url_id .  "\" alt=\"image_description\" />";
+                        $url_id = substr($input_url,strrpos(rtrim($input_url,'/'),'/')+1,-1);
+                        echo "<p class=\"margin_bottom_40\"></p><h1>Your Code is just a copy/paste away</h1><div class=\"widget widget-textarea form_left \"><textarea rows=\"6\" cols=\"40\"id=\"textarea\">";
+                        $output_html = "<div class=\"video169_container\"><iframe class=\"video169\" src=\"https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fgchumanrights%2Fvideos%2F" .$url_id .  "%2F&show_text=0&width=560\" frameborder=\"0\" allowfullscreen=\"\"></iframe></div>";
                         echo htmlspecialchars($output_html);
                         echo "</textarea>";
                         echo "<div class=\"submit_container submit button button--aylen button_submit button--aylen_submit no_margin_bottom\"> <input type=\"submit\" class=\"submit submit button button--aylen button_submit button--aylen_submit no_margin_bottom\" onclick=\"copy()\" value=\"COPY\"></button></div>";
