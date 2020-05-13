@@ -36,14 +36,14 @@
 
     <section class="container no_margin_bottom">
         <div class="ce_text description_page_programme block" style="padding-left: 50px;">
-            <h1>HTML Code Generator from GDRIVE</h1>
+            <h1>HTML Code Generator for Gdrive, YouTube, Facebook</h1>
 
             <p class="margin_bottom_20">This quick tool lets you easily paste a shareable link from gdrive and obtain the code to be used on open edX</p>
 
             <form action="monk/monk.php" method="post">
                 <div class="formbody">
                     <div class="widget widget-text form_left mandatory">
-                        <label for="ctrl_6205" class="form_left mandatory">Paste here your gdrive link:</label> <input type="text" name="url_input" id="val1" class="text form_left" placeholder="Paste here the gdrive link">
+                        <label for="ctrl_6205" class="form_left mandatory">Paste here your gdrive, youtube or facebook link:</label> <input type="text" name="url_input" id="val1" class="text form_left" placeholder="Paste here the gdrive link">
                     </div>
 
                     <div class="clear"></div>
@@ -51,27 +51,33 @@
                     <div class="widget widget-text form_left mandatory">
                         <label for="ctrl_6205" class="form_left mandatory">Choose what kind of link it is:</label> <select name="link_type" id="link_type">
                             <option value="portrait2">
-                                Single File - Portrait
+                                Gdrive - Single File - Portrait
                             </option>
 
                             <option value="landscape">
-                                Single File - Landscape
+                                Gdrive - Single File - Landscape
                             </option>
 
                             <option value="gridview">
-                                Single Folder - Grid View
+                                Gdrive - Single Folder - Grid View
                             </option>
 
                             <option value="detailview">
-                                Single Folder - Details View
+                                Gdrive - Single Folder - Details View
                             </option>
 
                             <option value="browsable">
-                                Browsable Folders
+                                Gdrive - Browsable Folders
                             </option>
 
                             <option value="image">
-                                Image
+                                Gdrive - Image
+                            </option>
+                            <option value="yt-video">
+                                Youtube - Video
+                            </option>
+                            <option value="fb-video">
+                                Facebook - Video
                             </option>
                         </select>
                     </div>
