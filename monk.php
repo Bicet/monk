@@ -97,7 +97,7 @@
             <?php
             if(isset($_POST['send-button'])) {
                 $input_url = $_POST["url_input"];
-                $url_id  = substr($input_url, strpos($input_url, "open?id=") + 8);
+                $url_id = explode("/",parse_url($input_url)['path'])[3]; 
                 $final_code = $_POST["link_type"];
             }   
                     
@@ -173,7 +173,6 @@
                         break;
 
                     case "yt-video":
-                        
                         function get_youtube_id_from_url($url)  {
                             preg_match('/(http(s|):|)\/\/(www\.|)yout(.*?)\/(embed\/|watch.*?v=|)([a-z_A-Z0-9\-]{11})/i', $url, $results);
                             return $results[6];
