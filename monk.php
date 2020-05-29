@@ -66,9 +66,11 @@
                                 Gdrive - Single Folder - Details View
                             </option>
 
+                            <!--                        
                             <option value="browsable">
                                 Gdrive - Browsable Folders
-                            </option>
+                            </option> 
+                            -->
 
                             <option value="image">
                                 Gdrive - Image
