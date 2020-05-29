@@ -66,11 +66,11 @@
                                 Gdrive - Single Folder - Details View
                             </option>
 
-                            <!--                        
+                                                   
                             <option value="browsable">
                                 Gdrive - Browsable Folders
                             </option> 
-                            -->
+                            
 
                             <option value="image">
                                 Gdrive - Image
@@ -154,7 +154,7 @@
 
                     case "browsable":
                         echo "<p class=\"margin_bottom_40\"></p><h1>Your Code is just a copy/paste away</h1><div class=\"widget widget-textarea form_left \"><textarea rows=\"6\" cols=\"40\"id=\"textarea\">";
-                        $output_html ="<div class=\"box_horizontal_a4_container\"><iframe class=\"box_horizontal_a4\" src=\"https://gchumanrights.org/edxtools/z_gdrive_viewer.php?ID=" .$url_id .  "\"></iframe></div>";
+                        $output_html ="<div class=\"box_horizontal_a4_container\"><iframe class=\"box_horizontal_a4\" src=\"https://cloudfarm.it/edxtools/z_gdrive_viewer.php?ID=" .$url_id .  "\"></iframe></div>";
                         echo htmlspecialchars($output_html);
                         echo "</textarea>";
                         echo "<div class=\"submit_container submit button button--aylen button_submit button--aylen_submit no_margin_bottom\"> <input type=\"submit\" class=\"submit submit button button--aylen button_submit button--aylen_submit no_margin_bottom\" onclick=\"copy()\" value=\"COPY\"></button></div>";
